@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Velha</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet"> <!-- Fonte de jogo -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Página Inicial -->
+    <div id="homePage">
+        <header>
+            <h1 id="title">Jogo da Velha
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="150" height="150">
+                    <!-- Linhas do Tabuleiro -->
+                    <line x1="100" y1="0" x2="100" y2="300" stroke="#fff" stroke-width="5"/>
+                    <line x1="200" y1="0" x2="200" y2="300" stroke="#fff" stroke-width="5"/>
+                    <line x1="0" y1="100" x2="300" y2="100" stroke="#fff" stroke-width="5"/>
+                    <line x1="0" y1="200" x2="300" y2="200" stroke="#fff" stroke-width="5"/>
+                
+                    <!-- X e O no Tabuleiro -->
+                    <!-- X -->
+                    <line x1="25" y1="25" x2="75" y2="75" stroke="#ff007f" stroke-width="5"/>
+                    <line x1="75" y1="25" x2="25" y2="75" stroke="#ff007f" stroke-width="5"/>
+                    <!-- O -->
+                    <circle cx="250" cy="50" r="30" stroke="#00d4ff" stroke-width="5" fill="none"/>
+                    <!-- X -->
+                    <line x1="25" y1="125" x2="75" y2="175" stroke="#ff007f" stroke-width="5"/>
+                    <line x1="75" y1="125" x2="25" y2="175" stroke="#ff007f" stroke-width="5"/>
+                    <!-- O -->
+                    <circle cx="250" cy="150" r="30" stroke="#00d4ff" stroke-width="5" fill="none"/>
+                    <!-- X -->
+                    <line x1="25" y1="225" x2="75" y2="275" stroke="#ff007f" stroke-width="5"/>
+                    <line x1="75" y1="225" x2="25" y2="275" stroke="#ff007f" stroke-width="5"/>
+                </svg>
+                
+            </h1>
+        </header>
+        <section id="carouselSection">
+            <div id="carouselContainer">
+                <button id="prevBtn">&#10094;</button> <!-- Botão Anterior -->
+                <div id="carousel" class="carousel">
+                    <img src="img1.png" alt="Imagem 1">
+                    <img src="img2.png" alt="Imagem 2">
+                    <img src="img3.png" alt="Imagem 3">
+                    <img src="img4.png" alt="Imagem 4">
+                </div>
+                <button id="nextBtn">&#10095;</button> <!-- Botão Próximo -->
+            </div>
+        </section>
+        
+        <section id="rulesSection">
+    <h2>Regras do Jogo</h2>
+    <ul>
+        <li>O jogo é disputado por dois jogadores: X e O.</li>
+        <br>
+        <li>Os jogadores se revezam para marcar um espaço no tabuleiro 3x3.</li>
+        <br>
+        <li>O objetivo é alinhar três marcas (X ou O) na horizontal, vertical ou diagonal.</li>
+        <br>
+        <li>Se todos os espaços forem preenchidos sem um vencedor, o jogo termina em empate.</li>
+        <br>
+        <li>O primeiro jogador a completar uma linha vence a partida.</li>
+    </ul>
+    <p><strong>Você está sozinho?</strong> <br>
+         <br>
+        Jogue no modo IA (dispute contra o algoritmo)</p>
+</section>
+
+        <button id="startGameBtn">Começar o Jogo</button>
+    </div>
+
+    <!-- Página do Jogo da Velha -->
+    <div id="gamePage" class="hidden">
+        <h1 id="title">Jogo da Velha</h1>
+        <p id="status">Vez do jogador X</p>
+        <canvas id="gameCanvas"></canvas>
+        <button id="restartBtn">Reiniciar</button>
+        <button id="modeBtn">Modo: PvP</button>
+        <button id="backBtn">Voltar para a Página Inicial</button>
+    
+        <audio id="clickSound" src="click.mp3"></audio>
+        <audio id="winSound" src="win.mp3"></audio>
+
+        <script src="script.js"></script>
+    </div>
+
+</body>
+</html>
